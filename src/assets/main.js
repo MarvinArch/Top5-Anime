@@ -1,4 +1,4 @@
-const API= 'https://anime-facts-rest-api.herokuapp.com/api/v1';
+const API= 'https://api.jikan.moe/v4/top/anime';
 
 const options ={
     method: 'GET'
@@ -20,12 +20,12 @@ async function fetchData(urlAPI){
         <div class="group relative">
           <div
             class="change-size w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
-            <img src="${image.anime_img}" alt="" class="w-full">
+            <img src="${image.images.jpg.large_image_url}" alt="" class="w-full">
           </div>
           <div class="mt-4 flex justify-between">
             <h3 class="text-sm text-gray-700">
               <span aria-hidden="true" class="absolute inset-0 "></span>
-              ${image.anime_name.replace('_', ' ')}
+              ${image.titles[0].title}
             </h3>
           </div>
         </div>
